@@ -1,0 +1,100 @@
+body {
+  background-image: linear-gradient(to right,#d5ff80, rgb(204, 179, 255));
+}
+
+header {
+    font-size: x-large;
+    padding-bottom: 10px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+button {
+   border-style: solid;
+   border-width: thick;
+   border-radius: 10px;
+   font-weight: bold
+}
+
+th {
+  padding-bottom: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 8px;    
+}
+
+td {
+ #border-style: solid;
+ padding-bottom: 20px;    
+}
+
+footer {
+  #text-align: center;
+  text-decoration: none;
+  background-color:#ffcc66;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+  width: 75%;
+  height: 25%;    
+  
+}
+
+.right {
+  width: 25%;
+  height: 75%;
+  #background-color: aliceblue;
+  border-style: solid; 
+  border-radius: 9px;
+  border-width: thin;    
+  
+}
+
+.inputLabel {
+    color: darkgreen;
+}
+
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 10px;
+    width: 300px;
+    background-color: #4d4dff;
+    border-radius: 20px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 10px;
+    width: 8px;
+    background-color: #003300;
+    cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Create 2 unequal columns that floats next to each other */
+
+* {
+  box-sizing: border-box;
+}
+
+
+

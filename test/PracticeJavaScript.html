@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script>
+       function changeParagraph() {
+           
+          /** Get the HTML element */ 
+          var demoElem = document.getElementById("demo");
+          /** Modify the HTML element's value */
+          demoElem.innerHTML = "New Paragraph"; 
+           
+          var secondParaElem = document.getElementById("secondPara");
+          secondParaElemnt.innerHTML = "New Second Paragraph";
+           
+          var thirdParaElem = document.getElementById("thirdPara");
+          thirdParaElem.innerHTML = "New Third Paragraph";
+         
+       }
+       
+       function setSliderValue() {
+           
+          var sliderElem = document.getElementById("someSlider");
+          var sliderValue = sliderElem.value;
+           
+          var labelElem = document.getElementById("labelId");
+          labelElem.innerHTML = sliderValue;
+          
+       }
+   </script>
+</head>
+<body>
+
+<h2>My First JavaScript</h2>
+
+<button type="button" onclick="changeParagraph()">
+        Click me to display New Contents</button>
+
+<p id="demo">Old Contents</p>
+    
+<p id="secondPara">Second Paragraph</p>
+    
+<p id="thirdPara">Third Paragraph</p>
+    
+<input type="range" id="someSlider" onchange="setSliderValue();" min="1" max="90" value="1" />
+&nbsp;&nbsp;&nbsp;
+<label id="labelId"> 1 </label>
+
+</body>
+</html> 
