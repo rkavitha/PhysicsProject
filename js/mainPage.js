@@ -2,6 +2,7 @@ var gr;
  
 function initializeVariables() {
     gr = new jsGraphics(document.getElementById("canvasDiv"));
+    lineStartYPos = document.getElementById("canvas").height;
 }
 
 /** 
@@ -28,10 +29,6 @@ function setVelocityValue() {
 function reset() {
     gr.clear();
     window.location.reload();
-    //resetAngle();
-    //resetVelocity();
-    //resetMass();
-    //resetResults();
 }
 
 function resetAngle() {

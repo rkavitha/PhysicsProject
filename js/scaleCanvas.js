@@ -3,6 +3,9 @@ const SCALE_GRAPH_EVERY = 100;
 const SCALE_WIDTH = 4;
 const SCALE_HEIGHT = 8;
 
+const LINE_START_X_POS = 0;
+var lineStartYPos = 0;
+
 
 function scaleGraphXAxis() {
     var numScaleOnXAxis = Math.round(MAX_HORIZONTAL_DISTANCE / SCALE_GRAPH_EVERY);
@@ -13,7 +16,7 @@ function scaleGraphXAxis() {
     var scaleXPos = LINE_START_X_POS;
     var scaleHorizontal = Math.round((SCALE_GRAPH_EVERY/MAX_HORIZONTAL_DISTANCE) * canvas.width); 
     for (var i = 0; i < numScaleOnXAxis; i++) {
-        var point = new jsPoint(scaleXPos, LINE_START_Y_POS);
+        var point = new jsPoint(scaleXPos, lineStartYPos);
         gr.drawRectangle(redPen, point, SCALE_WIDTH, SCALE_HEIGHT);
         scaleXPos += scaleHorizontal;      
     }

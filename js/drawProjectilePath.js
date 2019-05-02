@@ -4,8 +4,6 @@ const MAX_HEIGHT = 420;
 /** Properties used when drawing the projectile path */
 const LINE_COLOR = "rgb(255, 26, 26)";
 const LINE_THICKNESS = 2;
-const LINE_START_X_POS = 0;
-const LINE_START_Y_POS = 0;
 const Y_POS_OFFSET = 20;
 
 /** Properties used when drawing the projectile path info as text next to the projectile path */
@@ -39,7 +37,6 @@ function drawPath() {
    
    var curvePoints=new Array(point1,point2,point3);
    
-   //var gr = new jsGraphics(document.getElementById("canvasDiv")); 
    gr.setOrigin(new jsPoint(0,0));
    gr.drawCurve(bluePen,curvePoints);
 }
@@ -47,19 +44,16 @@ function drawPath() {
 function calculateMaxXPos() {
     maxXPos = (totalHorizontalDistance/MAX_HORIZONTAL_DISTANCE) * canvas.width;
     maxXPos = Math.round(maxXPos);
-    //alert("maxXPos" + maxXPos);
 }
 
 function calculateMidXPos() {
     midXPos = maxXPos/2;
     midXPos = Math.round(midXPos);
-    //alert("midXPos" + midXPos);
 }
 
 function calculateMaxYPos() {
     maxYPos = canvas.height - (maxHeight/MAX_HEIGHT * canvas.height);
 	maxYPos = Math.round(maxYPos);
-    //alert("maxYPos" + maxYPos);
 }
 
 function getPathInfo() {
