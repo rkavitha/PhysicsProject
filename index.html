@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="js/mainPage.js"> </script>
+    <script type="text/javascript" src="js/scaleCanvas.js"> </script>
+    <script type="text/javascript" src="js/initializeCanvas.js"> </script>
+    <script type="text/javascript" src="js/projectilePathResults.js"> </script>
+    <script type="text/javascript" src="js/drawProjectilePath.js"> </script>
+    <script type="text/javascript" src="js/exportProjectilePathResults.js"> </script>
+    <script type="text/javascript" src="js/jsDraw2D.js"> </script>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"> </script>
+    <script type="text/javascript" src="js/excelexportjs.js"> </script>
+    <link rel="stylesheet" href="css/BlankStyleSheet.css"/>
+    
+    <title>Physics Project</title>
+          
+</head>
+       
+<body onload="initializeVariables();scaleGraphXAxis();scaleGraphYAxis()">
+    <header>Projectile Motion</header>
+    <div id="dvjson"></div>
+    <nav>
+       <ul>
+         <li><button id="LaunchId" Value="Launch" onclick="launchProjectile();"> Launch </button></li>
+         <li><button id="ResetId" Value="Reset" onclick="reset();"> Reset </button></li>
+         <li><button id="XLSelectionsId" Value="XLSelections" onclick="downloadAllSelections();"> &#8595; XL Selections </button></li> 
+         <li><button id="XLAllConstAngleId" Value="XLAllConstAngle" onclick="downloadAllWithConstAngle();"> &#8595; XL All Const Angle </button></li>
+         <li><button id="XLAllConstVelocityId" Value="XLAllConstVelocity" onclick="downloadAllWithConstVelocity();"> &#8595; XL All Const Velocity </button></li>
+       </ul>
+    </nav>
+    
+    <div class="row" id="canvasDiv" style="overflow:hidden;position:relative;">
+      <div class="column left" id="firstColumn">
+         <script> 
+             createCanvas(); 
+             document.getElementById("firstColumn").appendChild(canvas);
+          </script>
+      </div>
+      <div class="column right" id="secondColumn">
+          <table>
+          <thead>
+              <tr>
+                 <th> User Input</th>
+              </tr>
+          </thead> 
+          <tbody> 
+              <tr>
+                    <td><label id="angleLabel" class="inputLabel"> Angle(in degrees): </label></td>
+                    <td><input type="range" id="angleRange" onchange="setAngleValue();" min"0" max="90" value="0" /></td>
+              </tr>
+              <tr>
+                    <td><label id="initialVelocityLabel" class="inputLabel"> Initial Velocity(m/s): </label></td>
+                    <td><input type="range" id="velocityRange" onchange="setVelocityValue();" min="0" max="90" value="0" /></td>
+              </tr>
+              <tr>
+                    <td><input type="checkbox" id="massCheckbox" value="mass" /><label id="mass" class="inputLabel"> mass</label></td>
+              </tr>
+              <tr>
+                    <td><label id="scaleXYId" class="inputLabel"> Scale (X/Y): </label></td>
+                    <td align="left">
+                        <svg width="180" height="10">
+                            <rect x="5" y="5" width="2" height="2"
+                                    style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+                            <line x1="5" y1="5" x2="130" y2="5"
+                                    style="stroke:rgb(0,0,0);stroke-width:2" />  
+                            <rect x="130" y="5" width="2" height="2"
+                                    style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+                        </svg>
+                  </td>
+              </tr>
+            </tbody>
+         </table>
+      </div>
+    </div>
+    <img src="images/roadImage.png" width="100%" height="20">
+   
+    <footer id="htmlFooter">
+        <table>
+          <thead>
+             <tr>
+                <th>Results</th>
+             </tr>
+          </thead>
+          <tbody>
+                <tr>
+                    <td> Time taken to reach Max Height: </td>
+                    <td><label id="timetakentoreachMaxHeightLabel"> 0 sec </label></td> 
+                    <td> Max Height: </td>
+                    <td><label id="maxHeightLabel"> 0 m </label></td>
+                    
+                </tr>
+                <tr>
+                    <td> Total Time: </td>
+                    <td><label id="totalTimeLabel"> 0 sec </label></td>
+                    <td> Total Horizontal Distance: </td>
+                    <td><label id="totalHorizontalDistanceLabel"> 0 m </label></td>
+                </tr>
+         </tbody>
+        </table>
+        
+    </footer>
+    
+</body>
+</html> 
